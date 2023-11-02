@@ -1,0 +1,272 @@
+:root {
+  --primary-color: #357b70;
+  --secondary-color: #e0b354;
+  --dark-grey: #2b2b2b;
+  --light-grey: #dad4d4;
+  --button-text-white: #ffff;
+  --button-visited: #05676e;
+  --button-active: #489c79;
+  --font-size-heading: 30px;
+  --heading-small: 20px;
+  --font-size-small: 16px;
+  --font-size-regular: 16px;
+  --button-font-size: 16px;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: var(--font-size-regular);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: var(--font-size-heading);
+  font-weight: 700;
+}
+
+a:visited {
+  color: var(--button-visited);
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--button-active);
+}
+
+button {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: var(--button-font-size);
+  color: var(--button-text-white);
+  padding: 10px;
+  border-radius: 3px;
+  font-family: inherit;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+button:hover,
+button:focus {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.button_secondary {
+  background-color: var(--secondary-color);
+  color: var(--dark-grey);
+}
+
+.profile_portrait {
+  float: left;
+  width: 250px;
+  margin-right: 40px;
+  border-radius: 50%;
+}
+
+.page_footer {
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.profile {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile_intro {
+  text-align: center;
+  font-size: var(--font-size-regular);
+  color: var(--dark-grey);
+}
+
+* {
+  box-sizing: boder-box;
+}
+
+.page-header {
+  display: flex;
+  width: auto;
+  padding: 20px;
+  border-bottom: 0.2px solid var(--light-grey);
+}
+
+.page-header_item {
+  flex: 0 1 200px;
+}
+
+.page-header_item:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/* start grid fallback */
+.grid_item {
+  display: inline-block;
+  width: 33%;
+}
+
+/* end grid fallback */
+
+@supports (display: grid) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+    max-width: 950px;
+  }
+
+  .grid_item {
+    background-color: var(--light-grey);
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .grid_item:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .grid_item:last-child {
+    grid-column: 3 / 3;
+
+  }
+
+}
+
+button,
+.button {
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color: var(--button-text-white);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  transition: opacity 0.2s;
+  margin: 20px;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about_item {
+  list-style-type: none;
+}
+
+.about_desc {
+  font-size: var(--font-size-regular);
+  color: var(--dark-grey);
+}
+
+
+
+/* Media Queries for responsive design */
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+
+  .grid_item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+    font-size: var(--font-size-small);
+  }
+}
+
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: var(--heading-small);
+  }
+}
+
+.sun {
+  animation-duration: 4s;
+  animation-name: color-change;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+
+  50% {
+    fill: #fcffad;
+  }
+
+  100% {
+    fill: #f76414;
+  }
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+
+  .grid_item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+}

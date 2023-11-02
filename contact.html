@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="fav icon" href="img/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.production.css">
+        <title>My Portfolio</title>
+    </head>
+
+    <body>
+        <header>
+            <img src="img/logo.svg" alt="logo image">
+            <nav>
+                <ul role="menubar">
+                    <li role="presentation"><a href="index.html" role="menuitem">Home</a></li>
+                    <li role="presentation"><a href="about.html" role="menuitem">About Me</a></li>
+                    <li role="presentation"><a href="contact.html" role="menuitem">Contact</a></li>
+                </ul>
+             </nav>
+        </header>
+        <main>
+            <div>
+                <h1>Lets Connect</h1>
+                <p>Sri Ranjani Srinivasan</p><br>
+                15,Borussiastrss,<br>
+                12103,Berlin<br>
+                Phone: <a href="tel:+49 1638025156">Phone : +49 1638025156</a><br>
+                Email: <a href="mailto:sriranjanis.srinivasan@gmail.com">sriranjanis.srinivasan@gmail.com</a><br>
+            </div>
+
+            <div>
+                <form action="" method="post" id="contact-form">
+                    <label class="standard-label" for="contact-email">E-mail:</label>
+                    <input type="email" id="contact-email" required><br>
+                    <label class="standard-label" for="contact-tel">Tel:</label>
+                    <input type="tel" id="contact-tel"><br>
+                    <label class="standard-label" for="contact-message">Your Message</label>
+                    <textarea maxlength="240" id="contact-message" required></textarea><br>
+                    <input type="submit" value="Send message">
+                </form>
+            </div>
+        </main>
+        <script src="js/tota11y.min.js"></script>
+    </body>
+
+</html>
